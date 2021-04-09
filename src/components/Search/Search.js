@@ -1,17 +1,15 @@
-import React, { useContext }from 'react';
-import EmployeeContext from "../../utils/EmployeeContext";
+import React from 'react';
 
-const Search = () => {
-    const data = useContext(EmployeeContext);
+function Search(props) {
 
     return (
-        <div class="search-bar">
-            <form>
-                <button type="submit" onClick={event => event.preventDefault()}><i className="fas fa-search"></i></button>
-                <input type ="search" placeholder="Search" onChange={event => data.handleSearch(event)}/>
-            </form>
-        </div>
-    )
-}
-
+        <input
+          type="text"
+          placeholder="Search Table"
+          onChange={(e) => props.reactiveSearch(e)}
+          className="mb-4"
+        />
+      );
+    }
+    
 export default Search;
